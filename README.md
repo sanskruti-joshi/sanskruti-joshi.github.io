@@ -1,6 +1,18 @@
-# React + TypeScript + Vite
+# Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository hosts a personal portfolio built with React, TypeScript, Vite and Tailwind CSS. The UI has been redesigned to follow a dark-themed one‑page layout with a floating sidebar for navigation, matching a modern UI template.
+
+The application now uses multiple pages—`Home`, `Skills`, `Projects`, `Experience`, `Education`, `Languages`, and `Contact`—with a persistent sidebar for navigation. Dark mode is enforced site-wide; the sidebar no longer contains a theme toggle.
+
+## Development server
+
+```bash
+npm install
+npm run dev
+```
+
+Open http://localhost:5173 to view the site and use the sidebar anchors to jump between sections.
+
 
 Currently, two official plugins are available:
 
