@@ -7,7 +7,7 @@ import {
   FaTrophy,
   FaEnvelope,
 } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function Sidebar() {
   const links = [
@@ -25,13 +25,19 @@ export default function Sidebar() {
       <ul className="flex flex-col items-center gap-6">
         {links.map((link) => (
           <li key={link.path}>
-            <Link
+            <NavLink
               to={link.path}
-              className="text-xl text-slate-400 hover:text-indigo-400 transition"
+              className={({ isActive }) =>
+                `text-xl transition ${
+                  isActive
+                    ? 'text-indigo-400' // highlight current page
+                    : 'text-slate-400 hover:text-indigo-400'
+                }`
+              }
               aria-label={link.label}
             >
               {link.icon}
-            </Link>
+            </NavLink>
           </li>
         ))}
       </ul>

@@ -1,14 +1,22 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
+import {
+  School,
+  BookOpen,
+  Laptop,
+  Award,
+  GraduationCap,
+  Star,
+} from "lucide-react";
 
 interface EducationItem {
   year: string;
   degree: string;
   institution: string;
   gpa?: string;
-  level?: "highest" | "second";
+  Icon: React.ElementType;
 }
 
 export default function Education() {
@@ -18,128 +26,156 @@ export default function Education() {
       degree: "SSC",
       institution: "Sinhgad Spring Dale Public School",
       gpa: "9.4 / 10",
+      Icon: School,
     },
     {
       year: "2021",
       degree: "HSC",
       institution: "Sinhgad Spring Dale Public School",
       gpa: "9.7 / 10",
-      level: "highest",
+      Icon: BookOpen,
     },
     {
       year: "2024",
       degree: "BSc Computer Science",
       institution: "Modern College",
       gpa: "9.6 / 10",
-      level: "second",
+      Icon: Laptop,
     },
     {
       year: "2025",
       degree: "Advanced Course in Data Science & AI",
       institution: "SPPU",
       gpa: "8.6 / 10",
+      Icon: Award,
     },
     {
       year: "2026",
       degree: "MSc Data Science",
-      institution: "Savitribai Phule Pune University",
+      institution: "SPPU",
+      Icon: GraduationCap,
     },
   ];
 
   return (
-    <section className="relative w-full py-5 px-6 text-white">
+    <section className="relative w-full py-32 px-6 text-white">
+      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-indigo-950 via-black to-black -z-10" />
 
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
 
-        {/* Header */}
-        <div className="text-center mb-28">
+        {/* HEADER */}
+        <div className="text-center mb-16">
           <h2 className="text-5xl font-bold bg-gradient-to-r from-indigo-300 to-purple-400 bg-clip-text text-transparent">
             Academic Journey
           </h2>
-          <p className="text-indigo-300/70 mt-4">
-            Consistent academic performance across foundational and advanced studies.
+
+          {/* NEW TAGLINE */}
+          <p className="text-indigo-300/70 mt-4 text-lg">
+            Structured academic growth with consistent excellence across milestones.
           </p>
         </div>
 
-        <div className="relative">
+        {/* TIMELINE CONTAINER */}
+        <div className="relative overflow-visible">
 
-  {/* MAIN SPINE — a bit higher so it intersects node centers */}
-  <div className="absolute left-0 right-0 top-[64px] flex items-center">
+          {/* CHEVRON STRIP */}
+          <div className="flex items-center justify-center gap-0 mb-16">
+            {education.map((item, index) => {
+              const Icon = item.Icon;
+              const isFirst = index === 0;
+              const isLast = index === education.length - 1;
 
-    {/* Tapered Ends with better gradient */}
-    <div className="flex-1 h-[1.5px] bg-gradient-to-r from-transparent via-purple-400 to-indigo-500" />
-
-    {/* Core Center Line */}
-    <div className="w-full h-[1.5px] bg-gradient-to-r from-purple-500 via-indigo-400 to-indigo-500" />
-
-    <div className="flex-1 h-[1.5px] bg-gradient-to-l from-transparent via-purple-400 to-indigo-500" />
-  </div>
-
-  <div className="grid grid-cols-1 md:grid-cols-5 gap-12 relative">
-
-    {education.map((item, index) => {
-
-      // height now matches applied margin so line meets card
-      const connectorHeight = index % 2 === 0 ? 96 : 128; // corresponds to mt-24 / mt-32
-      const stagger = index % 2 === 0 ? "mt-24" : "mt-32";
-
-      return (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="relative text-center"
-        >
-
-          {/* Year */}
-          <div className="text-indigo-400 font-semibold mb-6 text-lg">
-            {item.year}
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="relative flex-shrink-0"
+                  style={{
+                    marginRight: index < education.length - 1 ? "-40px" : "0",
+                    zIndex: education.length - index,
+                  }}
+                >
+                  {/* Chevron */}
+                  <div
+                    className="relative h-32 flex flex-col items-center justify-center bg-gradient-to-r from-[#5b4b8a] via-[#6a57b5] to-[#7c5cff] shadow-md transition-all"
+                    style={{
+                      width: "180px",
+                      clipPath:
+                        "polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0% 100%)",
+                      borderRadius: isFirst
+                        ? "32px 0 0 32px"
+                        : isLast
+                        ? "0 32px 32px 0"
+                        : "0",
+                    }}
+                  >
+                    <Icon
+                      className="w-10 h-10 text-white opacity-90 mb-2"
+                      strokeWidth={1.5}
+                    />
+                    <span className="text-sm font-bold text-white">
+                      {item.year}
+                    </span>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
 
-          {/* NODE */}
-          <div className="relative z-10 flex justify-center">
-            <div className="w-5 h-5 rounded-full bg-gradient-to-br from-purple-500 to-indigo-500 shadow-md" />
+          {/* TEXT GRID */}
+          <div className="flex justify-center">
+            <div
+              className="grid grid-cols-5 gap-0"
+              style={{ width: "fit-content" }}
+            >
+              {education.map((item, index) => {
+                const isTopGPA =
+                  item.gpa === "9.7 / 10" || item.gpa === "9.6 / 10";
+
+                return (
+                  <motion.div
+                    key={`text-${index}`}
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: index * 0.1 + 0.2,
+                    }}
+                    viewport={{ once: true }}
+                    className="text-center px-4"
+                    style={{ width: "180px" }}
+                  >
+                    <h3 className="font-bold text-lg text-white leading-tight">
+                      {item.degree}
+                    </h3>
+
+                    <p className="text-indigo-300/70 text-sm mt-2 leading-relaxed">
+                      {item.institution}
+                    </p>
+
+                    {item.gpa && (
+                      <div className="mt-2 flex items-center justify-center gap-2 text-sm font-semibold text-purple-300">
+                        <span>GPA {item.gpa}</span>
+
+                        {isTopGPA && (
+                          <Star
+                            className="w-4 h-4 text-purple-400"
+                            fill="currentColor"
+                          />
+                        )}
+                      </div>
+                    )}
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
 
-          {/* Vertical Connector */}
-          <div
-            className="mx-auto w-[1.5px] bg-gradient-to-b from-purple-500 to-indigo-300"
-            style={{ height: `${connectorHeight}px` }}
-          />
-
-          {/* CARD */}
-          <div
-            className={`bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-xl ${stagger} transition hover:scale-105`}
-          >
-            <h3 className="text-lg font-semibold mb-2">
-              {item.degree}
-            </h3>
-
-            <p className="text-indigo-300/80 text-sm mb-4">
-              {item.institution}
-            </p>
-
-            {item.gpa && (
-              <div className="flex justify-center items-center gap-2">
-                {(item.level === "highest" || item.level === "second") && (
-                  <Sparkles className="w-4 h-4 text-indigo-300" />
-                )}
-
-                <span className="px-4 py-1.5 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-sm font-semibold shadow-md">
-                  GPA {item.gpa}
-                </span>
-              </div>
-            )}
-          </div>
-
-        </motion.div>
-      );
-    })}
-  </div>
-</div>
+        </div>
       </div>
     </section>
   );
