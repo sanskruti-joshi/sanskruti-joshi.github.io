@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Skills from './pages/Skills';
 import Projects from './pages/Projects';
@@ -12,7 +12,7 @@ import Sidebar from './components/Sidebar';
 function App() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-black text-white">
-      <BrowserRouter>
+      <HashRouter>
         <Sidebar />
         <main className="pt-12">
           <Routes>
@@ -26,7 +26,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
