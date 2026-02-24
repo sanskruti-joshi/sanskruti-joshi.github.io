@@ -13,7 +13,7 @@ export default function Experience() {
   const experiences: ExperienceItem[] = [
     {
       year: "2025 – 2026",
-      title: "Software Engineering Intern",
+      title: "Software Intern",
       organization: "3more Technologies",
       description: [
         "Developed and optimized frontend components for production systems.",
@@ -32,7 +32,7 @@ export default function Experience() {
       ],
     },
     {
-      year: "2023 – 2024",
+      year: "2023",
       title: "Department Representative (NAAC)",
       organization: "College Leadership",
       description: [
@@ -41,7 +41,7 @@ export default function Experience() {
       ],
     },
     {
-      year: "2023",
+      year: "2022",
       title: "Volunteer – Interaction Intercollege Event",
       organization: "College Event",
       description: [
@@ -65,7 +65,7 @@ export default function Experience() {
             Experience & Leadership
           </h2>
           <p className="text-indigo-300/70 mt-4">
-            Engineering experience, leadership roles, and institutional contributions.
+            Technical experience, leadership roles, and institutional contributions.
           </p>
         </div>
 
