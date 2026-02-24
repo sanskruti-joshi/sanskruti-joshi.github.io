@@ -16,14 +16,14 @@ export default function Projects() {
       description:
         "Built a deep learning model using Convolutional Neural Networks (CNN) to classify handwritten digits from the MNIST dataset. Implemented preprocessing, training, and evaluation using TensorFlow/Keras with hyperparameter tuning.",
       category: "Machine Learning",
-      image: "/assets/Digit_Recognition.png",
+      image: `${import.meta.env.BASE_URL}/assets/Digit_Recognition.png`,
     },
     {
       title: "AI-based Fake Account Identifier",
       description:
         "Developed a machine learning system to detect fake or bot accounts using behavioral and profile-based features. Improved detection accuracy through model comparison and cross-validation.",
       category: "Machine Learning",
-      image: "/assets/fake_account.png",
+      image: `${import.meta.env.BASE_URL}/assets/fake_account.png`,
     },
     {
       title: "Automatic Pothole Detector",
