@@ -116,7 +116,11 @@ export default function Achievements() {
   );
 }
 
-function AchievementCard({ icon, title, description }) {
+function AchievementCard({ icon, title, description }: {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
