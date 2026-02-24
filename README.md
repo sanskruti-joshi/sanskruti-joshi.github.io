@@ -1,6 +1,6 @@
 # Portfolio
 
-🌐 Live Website: https://your-vercel-link.vercel.app  
+🌐 Live Website: https://sanskruti-joshi.github.io/  
 
 This repository contains the source code for my personal portfolio website.
 
