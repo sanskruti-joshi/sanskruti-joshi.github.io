@@ -16,35 +16,35 @@ export default function Projects() {
       description:
         "Built a deep learning model using Convolutional Neural Networks (CNN) to classify handwritten digits from the MNIST dataset. Implemented preprocessing, training, and evaluation using TensorFlow/Keras with hyperparameter tuning.",
       category: "Machine Learning",
-      image: `${import.meta.env.BASE_URL}/assets/Digit_Recognition.png`,
+      image: `${import.meta.env.BASE_URL}assets/Digit_Recognition.png`,
     },
     {
       title: "AI-based Fake Account Identifier",
       description:
         "Developed a machine learning system to detect fake or bot accounts using behavioral and profile-based features. Improved detection accuracy through model comparison and cross-validation.",
       category: "Machine Learning",
-      image: `${import.meta.env.BASE_URL}/assets/fake_account.png`,
+      image: `${import.meta.env.BASE_URL}assets/fake_account.png`,
     },
     {
       title: "Automatic Pothole Detector",
       description:
         "Led a team project to detect road potholes using computer vision. Built an image-processing pipeline and trained a deep learning model. Demonstrates leadership and practical AI deployment.",
       category: "IoT & Computer Vision",
-      image: "/assets/pothole_detector.png",
+      image: `${import.meta.env.BASE_URL}assets/pothole_detector.png`,
     },
     {
       title: "Pinterest Clone",
       description:
         "Developed a responsive web application inspired by Pinterest using Django. Implemented authentication, image uploads, and dynamic UI rendering.",
       category: "Web Development",
-      image: "/assets/pinterest_clone.png",
+      image: `${import.meta.env.BASE_URL}assets/pinterest_clone.png`,
     },
     {
       title: "Personal Portfolio",
       description:
         "Designed and developed a responsive portfolio website with modern UI principles, interactive sections, and optimized performance.",
       category: "Web Development",
-      image: "/assets/portfolio_logo.png",
+      image: `${import.meta.env.BASE_URL}assets/portfolio_logo.png`,
     },
   ];
 
