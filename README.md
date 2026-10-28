@@ -27,5 +27,5 @@ Designed to present my work in Machine Learning, Web Development, and academic r
 
 ## Contact
 
-LinkedIn: www.linkedin.com/in/sanskruti-joshi-632991210 <br>
+LinkedIn: www.linkedin.com/in/sanskrutirjoshi <br>
 Email: sanskrutijoshi131@gmail.com
