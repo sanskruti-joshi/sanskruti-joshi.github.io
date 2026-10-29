@@ -28,7 +28,7 @@ export default function Home() {
 
         {/* Role */}
         <p className="mt-4 text-xl text-indigo-300 font-medium">
-          Data Science & Frontend Developer
+          Data Scientist | ML Engineer | Software Engineer
         </p>
 
         {/* Description */}
