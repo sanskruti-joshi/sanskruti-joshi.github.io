@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09090b">
+  <meta name="description" content="Sanskruti Joshi — Data Scientist and Software Engineer focused on predictive modeling, machine learning and data-driven solutions.">
+  <title>Sanskruti Joshi — Data Scientist & ML Engineer</title>
+
+  <!-- Tailwind CSS CDN: suitable for a simple static GitHub Pages portfolio. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace']
+          },
+          colors: {
+            ink: '#09090b',
+            panel: '#111114',
+            line: '#27272a',
+            muted: '#a1a1aa',
+            violet: '#a78bfa',
+            cyan: '#67e8f9'
+          },
+          boxShadow: {
+            soft: '0 20px 70px rgba(0,0,0,.24)'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root { color-scheme: dark; }
+    html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+    body {
+      background-color: #09090b;
+      background-image:
+        radial-gradient(ellipse at 14% 5%, rgba(139,92,246,.11), transparent 34rem),
+        radial-gradient(ellipse at 88% 32%, rgba(34,211,238,.055), transparent 30rem);
+    }
+    .grid-texture {
+      background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, black, transparent 82%);
+      pointer-events: none;
+    }
+    .glass { background: rgba(17,17,20,.82); backdrop-filter: blur(16px); }
+    .card {
+      background: linear-gradient(145deg, rgba(24,24,27,.94), rgba(17,17,20,.94));
+      border: 1px solid rgba(63,63,70,.62);
+      transition: transform .25s ease, border-color .25s ease, background .25s ease;
+    }
+    .card:hover { transform: translateY(-4px); border-color: rgba(167,139,250,.48); }
+    .gradient-text {
+      background: linear-gradient(105deg, #ddd6fe 5%, #a78bfa 52%, #67e8f9 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .eyebrow { font-family: "DM Mono", monospace; letter-spacing: .16em; }
+    .tag { border: 1px solid #3f3f46; background: rgba(39,39,42,.58); }
+    .section-rule { border-top: 1px solid rgba(63,63,70,.55); }
+    .project-image { background: #18181b; }
+    .nav-link { color: #a1a1aa; transition: color .2s ease; }
+    .nav-link:hover, .nav-link:focus-visible { color: #fff; }
+    ::selection { background: rgba(167,139,250,.35); color: white; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+
+<body class="font-sans text-zinc-200 antialiased">
+  <div class="grid-texture fixed inset-0 z-0" aria-hidden="true"></div>
+
+  <div class="relative z-10 mx-auto max-w-6xl px-5 sm:px-8">
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 -mx-5 border-b border-white/[0.06] bg-[#09090b]/85 px-5 backdrop-blur-xl sm:-mx-8 sm:px-8">
+      <nav class="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between" aria-label="Main navigation">
+        <a href="#home" class="flex items-center gap-2.5" aria-label="Sanskruti Joshi, home">
+          <span class="grid h-9 w-9 place-items-center rounded-xl border border-violet-400/25 bg-violet-400/10 font-mono text-sm font-medium text-violet-200">SJ</span>
+          <span class="text-sm font-semibold tracking-wide text-white">Sanskruti Joshi<span class="text-violet-400">.</span></span>
+        </a>
+
+        <div class="hidden items-center gap-7 md:flex">
+          <a class="nav-link text-sm" href="#about">About</a>
+          <a class="nav-link text-sm" href="#experience">Experience</a>
+          <a class="nav-link text-sm" href="#projects">Projects</a>
+          <a class="nav-link text-sm" href="#skills">Skills</a>
+        </div>
+
+        <button id="menuButton" class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-zinc-700 text-zinc-200 md:hidden" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg id="menuIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </nav>
+      <div id="mobileMenu" class="hidden border-t border-white/[0.06] py-3 md:hidden">
+        <div class="grid gap-1">
+          <a class="nav-link rounded-lg px-3 py-2 text-sm" href="#about">About</a>
+          <a class="nav-link rounded-lg px-3 py-2 text-sm" href="#experience">Experience</a>
+          <a class="nav-link rounded-lg px-3 py-2 text-sm" href="#projects">Projects</a>
+          <a class="nav-link rounded-lg px-3 py-2 text-sm" href="#skills">Skills</a>
+          <a class="nav-link rounded-lg px-3 py-2 text-sm" href="#contact">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section id="home" class="grid gap-6 pb-8 pt-12 sm:pt-16 lg:grid-cols-[1.55fr_.85fr] lg:items-stretch lg:pt-20">
+        <div class="card relative flex min-h-[390px] flex-col justify-between overflow-hidden rounded-[2rem] p-7 shadow-soft sm:p-10">
+          <div class="pointer-events-none absolute -right-24 -top-28 h-80 w-80 rounded-full bg-violet-500/10 blur-[90px]"></div>
+          <div class="relative">
+            <div class="mb-9 inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/[0.06] px-3 py-1.5">
+              <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+              <span class="eyebrow text-[10px] uppercase text-emerald-300">Data science · Machine learning</span>
+            </div>
+            <p class="mb-3 text-sm text-zinc-400">Hello, I'm</p>
+            <h1 class="max-w-3xl text-5xl font-semibold leading-[1.05] tracking-[-.055em] text-white sm:text-6xl lg:text-[4.4rem]">
+              Sanskruti <span class="gradient-text">Joshi.</span>
+            </h1>
+            <h2 class="mt-6 max-w-xl text-lg font-medium leading-relaxed text-zinc-200 sm:text-xl">
+              Data Scientist specializing in <span class="text-violet-300">Predictive Modeling</span> &amp; <span class="text-cyan-200">NLP</span>.
+            </h2>
+            <p class="mt-4 max-w-xl text-sm leading-7 text-zinc-400 sm:text-[15px]">
+              I work at the intersection of data, statistics and software — developing machine learning solutions, investigating model behaviour and translating complex datasets into useful insights.
+            </p>
+          </div>
+          <div class="relative mt-9 flex flex-wrap items-center gap-3">
+            <a href="https://github.com/sanskruti-joshi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl bg-zinc-100 px-5 py-3 text-sm font-semibold text-zinc-950 transition hover:bg-violet-200">
+              GitHub <span aria-hidden="true">↗</span>
+            </a>
+            <!-- Replace with your actual LinkedIn profile URL. -->
+            <a href="https://www.linkedin.com/in/sanskrutirjoshi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl border border-zinc-700 px-5 py-3 text-sm font-medium text-zinc-200 transition hover:border-violet-400/60 hover:text-white">
+              LinkedIn <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+          <div class="card rounded-[1.5rem] p-6">
+            <div class="flex items-center justify-between">
+              <span class="eyebrow text-[10px] uppercase text-zinc-500">Education</span>
+              <span class="text-violet-300">✳</span>
+            </div>
+            <div class="mt-5 flex items-baseline gap-2">
+              <span class="text-4xl font-semibold tracking-tight text-white">9.02</span>
+              <span class="text-sm text-zinc-500">/ 10</span>
+            </div>
+            <p class="mt-1 text-sm text-zinc-400">MSc Data Science · A+ grade</p>
+          </div>
+          <div class="card rounded-[1.5rem] p-6">
+            <div class="flex items-center justify-between">
+              <span class="eyebrow text-[10px] uppercase text-zinc-500">Academic distinction</span>
+              <span class="text-cyan-200">✳</span>
+            </div>
+            <div class="mt-5 text-3xl font-semibold tracking-tight text-white">First Rank</div>
+            <p class="mt-2 text-sm text-zinc-400">BSc Computer Science · Endowment Prize</p>
+          </div>
+          <div class="card rounded-[1.5rem] p-6">
+            <div class="flex items-center justify-between">
+              <span class="eyebrow text-[10px] uppercase text-zinc-500">Research</span>
+              <span class="text-violet-300">✳</span>
+            </div>
+            <div class="mt-5 text-3xl font-semibold tracking-tight text-white">Published</div>
+            <p class="mt-2 text-sm text-zinc-400">Research on ML system drift detection</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="section-rule grid gap-8 py-14 md:grid-cols-[.7fr_1.3fr] md:gap-16">
+        <div>
+          <p class="eyebrow text-[10px] uppercase text-violet-300">01 / About</p>
+          <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white">Curious by nature.<br><span class="text-zinc-500">Analytical by design.</span></h2>
+        </div>
+        <div class="max-w-2xl">
+          <p class="text-[15px] leading-8 text-zinc-400">
+            With an academic foundation in Computer Science and Data Science, I enjoy solving problems that require both analytical thinking and practical implementation. My interests include predictive analytics, machine learning, model interpretability and natural language processing.
+          </p>
+          <p class="mt-4 text-[15px] leading-8 text-zinc-400">
+            My experience spans applied ML analytics, research into data and concept drift, classification, deep learning and software development. I value thoughtful experimentation, clear evaluation and solutions that can be understood as well as built.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="tag rounded-full px-3 py-1.5 text-xs text-zinc-300">Predictive analytics</span>
+            <span class="tag rounded-full px-3 py-1.5 text-xs text-zinc-300">Model interpretability</span>
+            <span class="tag rounded-full px-3 py-1.5 text-xs text-zinc-300">Statistical analysis</span>
+            <span class="tag rounded-full px-3 py-1.5 text-xs text-zinc-300">Applied machine learning</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="section-rule py-14">
+        <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p class="eyebrow text-[10px] uppercase text-violet-300">02 / Experience</p>
+            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white">Where I've worked</h2>
+          </div>
+          <span class="text-xs text-zinc-500">Professional experience</span>
+        </div>
+
+        <article class="card rounded-2xl p-6 sm:p-8">
+          <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-start">
+            <div>
+              <p class="eyebrow text-[10px] uppercase text-cyan-200">Software engineering · Data &amp; ML</p>
+              <h3 class="mt-3 text-xl font-semibold text-white">Software Engineer</h3>
+              <p class="mt-1 text-sm text-zinc-400">3MORE Technologies Pvt. Ltd. · Client engagement: Culligan Quench</p>
+            </div>
+            <span class="w-fit rounded-full border border-zinc-700 px-3 py-1.5 text-xs text-zinc-400">April 2026 – Present</span>
+          </div>
+          <div class="mt-6 grid gap-6 md:grid-cols-[1fr_1fr]">
+            <div>
+              <p class="mb-3 text-sm font-medium text-zinc-200">Selected contributions</p>
+              <ul class="space-y-3 text-sm leading-6 text-zinc-400">
+                <li class="flex gap-3"><span class="mt-0.5 text-violet-300">↳</span><span>Contributed to an ML-based customer analytics initiative, focusing on churn and removal-risk prediction.</span></li>
+                <li class="flex gap-3"><span class="mt-0.5 text-violet-300">↳</span><span>Worked with XGBoost using a Poisson objective to estimate expected removals and support RMR-at-Risk analysis.</span></li>
+                <li class="flex gap-3"><span class="mt-0.5 text-violet-300">↳</span><span>Used SHAP to interpret model outputs and examine feature contributions to predicted risk.</span></li>
+              </ul>
+            </div>
+            <div class="rounded-xl border border-zinc-800 bg-black/20 p-5">
+              <p class="eyebrow text-[10px] uppercase text-zinc-500">Earlier experience</p>
+              <h4 class="mt-3 font-semibold text-white">Software Development Intern</h4>
+              <p class="mt-1 text-xs text-zinc-500">3MORE Technologies · Dec 2025 – Mar 2026</p>
+              <p class="mt-3 text-sm leading-6 text-zinc-400">Contributed to frontend development for GIFTS-AI using React, Vite and MongoDB-backed application workflows.</p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="tag rounded-md px-2.5 py-1 text-[11px] text-zinc-300">React</span>
+                <span class="tag rounded-md px-2.5 py-1 text-[11px] text-zinc-300">Vite</span>
+                <span class="tag rounded-md px-2.5 py-1 text-[11px] text-zinc-300">MongoDB</span>
+              </div>
+            </div>
+          </div>
+          <p class="mt-6 border-t border-zinc-800 pt-4 text-xs leading-5 text-zinc-500">Some work relates to client projects and is described at a high level. No confidential datasets, code or client-sensitive details are disclosed here.</p>
+        </article>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="section-rule py-14">
+        <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p class="eyebrow text-[10px] uppercase text-violet-300">03 / Selected work</p>
+            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white">Projects &amp; research</h2>
+            <p class="mt-2 max-w-xl text-sm leading-6 text-zinc-500">A selection of machine learning, deep learning, research and software projects.</p>
+          </div>
+          <a href="https://github.com/sanskruti-joshi?tab=repositories" target="_blank" rel="noopener noreferrer" class="text-sm text-zinc-400 transition hover:text-violet-300">All repositories ↗</a>
+        </div>
+
+        <div class="grid gap-4 md:grid-cols-2">
+          <!-- Drift detection -->
+          <article class="card overflow-hidden rounded-2xl">
+            
+<div class="project-image relative flex h-44 items-center justify-center overflow-hidden border-b border-zinc-800 bg-[#18181b]">
+
+  <!-- Subtle background -->
+  <div class="absolute inset-0 opacity-30"
+       style="background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:28px 28px">
+  </div>
+
+  <!-- Drift visualization -->
+  <div class="relative w-[85%] max-w-lg">
+
+    <svg viewBox="0 0 440 112"
+         class="w-full"
+         fill="none"
+         xmlns="http://www.w3.org/2000/svg"
+         role="img"
+         aria-label="Illustrative comparison of reference and current data distributions">
+
+      <defs>
+        <linearGradient id="referenceFill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#a78bfa" stop-opacity=".25"/>
+          <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+        </linearGradient>
+
+        <linearGradient id="currentFill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#67e8f9" stop-opacity=".18"/>
+          <stop offset="100%" stop-color="#67e8f9" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Grid lines -->
+      <path d="M10 15H430 M10 45H430 M10 75H430"
+            stroke="#3f3f46"
+            stroke-width=".7"
+            stroke-dasharray="3 5"/>
+
+      <!-- Reference distribution -->
+      <path d="M10 94
+               C65 94 91 88 120 65
+               C148 40 159 12 205 12
+               C251 12 263 40 291 65
+               C320 88 345 94 430 94
+               L430 100 L10 100 Z"
+            fill="url(#referenceFill)"/>
+
+      <path d="M10 94
+               C65 94 91 88 120 65
+               C148 40 159 12 205 12
+               C251 12 263 40 291 65
+               C320 88 345 94 430 94"
+            stroke="#a78bfa"
+            stroke-width="2.5"
+            stroke-linecap="round"/>
+
+      <!-- Current distribution: shifted -->
+      <path d="M10 94
+               C100 94 125 88 155 65
+               C183 40 195 19 241 19
+               C286 19 302 43 328 68
+               C353 89 377 94 430 94
+               L430 100 L10 100 Z"
+            fill="url(#currentFill)"/>
+
+      <path d="M10 94
+               C100 94 125 88 155 65
+               C183 40 195 19 241 19
+               C286 19 302 43 328 68
+               C353 89 377 94 430 94"
+            stroke="#67e8f9"
+            stroke-width="2.5"
+            stroke-linecap="round"/>
+
+      <!-- Shift indicator -->
+      <path d="M205 8V100"
+            stroke="#a1a1aa"
+            stroke-width="1"
+            stroke-dasharray="3 4"
+            opacity=".5"/>
+
+      <path d="M241 15V100"
+            stroke="#67e8f9"
+            stroke-width="1"
+            stroke-dasharray="3 4"
+            opacity=".5"/>
+
+    </svg>
+
+    <!-- Legend -->
+    <div class="mt-2 flex flex-wrap items-center justify-between gap-3">
+
+      <div class="flex items-center gap-4">
+        <span class="flex items-center gap-1.5 text-[10px] text-zinc-400">
+          <span class="h-0.5 w-4 rounded bg-violet-400"></span>
+          Reference
+        </span>
+
+        <span class="flex items-center gap-1.5 text-[10px] text-zinc-400">
+          <span class="h-0.5 w-4 rounded bg-cyan-300"></span>
+          Current
+        </span>
+      </div>
+
+      <span class="font-mono text-[9px] tracking-wider text-zinc-500">
+        DISTRIBUTION SHIFT
+      </span>
+
+    </div>
+
+  </div>
+
+  <!-- Project category -->
+  <span class="absolute left-5 top-4 font-mono text-[9px] tracking-[.16em] text-violet-200">
+    RESEARCH / MONITORING
+  </span>
+
+</div>
+
+            <div class="p-6">
+              <div class="flex items-start justify-between gap-3">
+                <h3 class="text-lg font-semibold text-white">Drift Detection in Machine Learning Systems</h3>
+                <span class="shrink-0 rounded-full border border-emerald-400/20 bg-emerald-400/[0.06] px-2.5 py-1 text-[10px] text-emerald-300">Published research</span>
+              </div>
+              <p class="mt-3 text-sm leading-6 text-zinc-400">Designed a data-drift monitoring framework using statistical tests and drift indicators to help identify changes in incoming data and inform model maintenance.</p>
+              <ul class="mt-4 space-y-2 text-sm text-zinc-400">
+                <li class="flex gap-2"><span class="text-violet-300">↳</span>Applied Kolmogorov–Smirnov testing and Population Stability Index (PSI).</li>
+                <li class="flex gap-2"><span class="text-violet-300">↳</span>Explored drift simulation, monitoring and retraining-trigger mechanisms.</li>
+              </ul>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="tag rounded-md px-2.5 py-1 text-[11px] text-zinc-300">Python</span><span class="tag rounded-md px-2.5 py-1 text-[11px] text-zinc-300">Statistics</span><span class="tag rounded-md px-2.5 py-1 text-[11px] text-zinc-300">PSI</span><span class="tag rounded-md px-2.5 py-1 text-[11px] text-zinc-300">KS Test</span>
+              </div>
+              <!-- Replace # with the paper or repository URL when ready. -->
+              <a href="#" class="mt-6 inline-flex text-sm font-medium text-violet-300 transition hover:text-violet-200">Research / code link <span class="ml-2">↗</span></a>
+            </div>
+          </article>
+
+          <!-- Churn prediction -->
+          <article class="card overflow-hidden rounded-2xl">
+            <div class="project-image relative flex h-44 items-center justify-center overflow-hidden border-b border-zinc-800">
+              <div class="absolute inset-0 bg-gradient-to-br from-violet-500/[0.10] via-transparent to-cyan-400/[0.08]"></div>
+              <svg class="relative h-28 w-4/5" viewBox="0 0 420 130" fill="none" aria-label="Illustrative predictive trend line">
+                <path d="M5 105H415M5 65H415M5 25H415" stroke="#3f3f46" stroke-dasharray="3 7"/>
+                <path d="M8 100C45 92 48 43 88 55S142 96 180 69 229 25 266 44 313 91 350 54 389 34 412 18" stroke="#a78bfa" stroke-width="3" stroke-linecap="round"/>
+                <path d="M8 100C45 92 48 43 88 55S142 96 180 69 229 25 266 44 313 91 350 54 389 34 412 18V120H8Z" fill="url(#fade)" opacity=".35"/>
+                <defs><linearGradient id="fade" x1="210" y1="18" x2="210" y2="120" gradientUnits="userSpaceOnUse"><stop stop-color="#a78bfa"/><stop offset="1" stop-color="#a78bfa" stop-opacity="0"/></linearGradient></defs>
+              </svg>
+              <span class="absolute left-5 top-5 eyebrow text-[10px] text-cyan-200">PREDICTIVE ANALYTICS</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-white">Customer Churn &amp; Removal-Risk Prediction</h3>
+              <p class="mt-3 text-sm leading-6 text-zinc-400">Applied predictive modeling to estimate expected customer removals and quantify recurring monthly revenue (RMR) exposure for business analysis.</p>
+              <ul class="mt-4 space-y-2 text-sm text-zinc-400">
+                <li class="flex gap-2"><span class="text-violet-300">↳</span>Built an XGBoost model with a Poisson objective for expected-removal estimation.</li>
+                <li class="flex gap-2"><span class="text-violet-300">↳</span>Used SHAP for interpretability and compared model behaviour across data periods.</li>
+              </ul>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="tag rounded-md px-2.5 py-1 text-[11px] text-zinc-300">Python</span><span class="tag rounded-md px-2.5 py-1 text-[11px] text-zinc-300">XGBoost</span><span class="tag rounded-md px-2.5 py-1 text-[11px] text-zinc-300">SHAP</span><span class="tag rounded-md px-2.5 py-1 text-[11px] text-zinc-300">Pandas</span>
+              </div>
+              <p class="mt-6 text-xs text-zinc-500">Professional work · Public code not available</p>
+            </div>
+          </article>
+
+          <!-- Fake account -->
+          <article class="card overflow-hidden rounded-2xl">
+            <div class="project-image h-44 overflow-hidden border-b border-zinc-800">
+              <div class="flex h-full items-center justify-center bg-[radial-gradient(circle_at_50%_45%,rgba(167,139,250,.13),transparent_55%),linear-gradient(135deg,#14141b,#101116)]">
+                <div class="grid w-4/5 max-w-xs grid-cols-3 gap-3">
+                  <div class="rounded-xl border border-zinc-700/80 bg-zinc-900/80 p-3 text-center">
+                    <div class="mx-auto mb-2 h-8 w-8 rounded-full border border-violet-300/50 bg-violet-300/10"></div>
+                    <div class="mx-auto h-1.5 w-12 rounded bg-zinc-600"></div>
+                    <div class="mx-auto mt-1.5 h-1 w-8 rounded bg-zinc-700"></div>
+                  </div>
+                  <div class="rounded-xl border border-violet-300/30 bg-violet-300/[0.06] p-3 text-center">
+                    <div class="mx-auto mb-2 grid h-8 w-8 place-items-center rounded-full border border-violet-300/50 text-sm text-violet-200">?</div>
+                    <div class="mx-auto h-1.5 w-12 rounded bg-violet-300/50"></div>
+                    <div class="mx-auto mt-1.5 h-1 w-8 rounded bg-zinc-700"></div>
+                  </div>
+                  <div class="rounded-xl border border-zinc-700/80 bg-zinc-900/80 p-3 text-center">
+                    <div class="mx-auto mb-2 h-8 w-8 rounded-full border border-cyan-200/40 bg-cyan-200/10"></div>
+                    <div class="mx-auto h-1.5 w-12 rounded bg-zinc-600"></div>
+                    <div class="mx-auto mt-1.5 h-1 w-8 rounded bg-zinc-700"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-white">Fake Social Media Account Detection</h3>
+              <p class="mt-3 text-sm leading-6 text-zinc-400">Built a classification workflow to identify potentially fake accounts and compare the performance of multiple machine learning algorithms.</p>
+              <ul class="mt-4 space-y-2 text-sm text-zinc-400">
+                <li class="flex gap-2"><span class="text-violet-300">↳</span>Compared SVM, Decision Tree, Random Forest, KNN and XGBoost.</li>
+                <li class="flex gap-2"><span class="text-violet-300">↳</span>Evaluated alternative models to identify a suitable classification approach.</li>
+              </ul>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="tag rounded-md px-2.5 py-1 text-[11px] text-zinc-300">Python</span><span class="tag rounded-md px-2.5 py-1 text-[11px] text-zinc-300">Scikit-learn</span><span class="tag rounded-md px-2.5 py-1 text-[11px] text-zinc-300">XGBoost</span>
+              </div>
+              <a href="https://github.com/sanskruti-joshi/Fake-Social-Media-Account-Detection" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex text-sm font-medium text-violet-300 transition hover:text-violet-200">Explore repository <span class="ml-2">↗</span></a>
+            </div>
+          </article>
+
+          <!-- Digit recognition -->
+          <article class="card overflow-hidden rounded-2xl">
+            <div class="project-image h-44 overflow-hidden border-b border-zinc-800">
+              <div class="flex h-full items-center justify-center bg-[radial-gradient(circle_at_50%_50%,rgba(103,232,249,.10),transparent_58%),linear-gradient(135deg,#12171b,#101116)]">
+                <div class="grid grid-cols-3 gap-2 sm:gap-3" aria-hidden="true">
+                  <span class="grid h-12 w-12 place-items-center rounded-lg border border-zinc-700 bg-zinc-900/80 font-mono text-xl text-zinc-400 sm:h-14 sm:w-14">0</span>
+                  <span class="grid h-12 w-12 place-items-center rounded-lg border border-cyan-200/40 bg-cyan-200/[0.07] font-mono text-xl text-cyan-100 sm:h-14 sm:w-14">7</span>
+                  <span class="grid h-12 w-12 place-items-center rounded-lg border border-zinc-700 bg-zinc-900/80 font-mono text-xl text-zinc-400 sm:h-14 sm:w-14">3</span>
+                  <span class="grid h-12 w-12 place-items-center rounded-lg border border-zinc-700 bg-zinc-900/80 font-mono text-xl text-zinc-400 sm:h-14 sm:w-14">8</span>
+                  <span class="grid h-12 w-12 place-items-center rounded-lg border border-violet-300/40 bg-violet-300/[0.07] font-mono text-xl text-violet-100 sm:h-14 sm:w-14">5</span>
+                  <span class="grid h-12 w-12 place-items-center rounded-lg border border-zinc-700 bg-zinc-900/80 font-mono text-xl text-zinc-400 sm:h-14 sm:w-14">2</span>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-white">Handwritten Digit Recognition</h3>
+              <p class="mt-3 text-sm leading-6 text-zinc-400">Developed a convolutional neural network using the MNIST dataset and integrated the trained model with a Python GUI for interactive digit prediction.</p>
+              <ul class="mt-4 space-y-2 text-sm text-zinc-400">
+                <li class="flex gap-2"><span class="text-violet-300">↳</span>Implemented image preprocessing and CNN-based classification.</li>
+                <li class="flex gap-2"><span class="text-violet-300">↳</span>Connected model inference to a graphical interface.</li>
+              </ul>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="tag rounded-md px-2.5 py-1 text-[11px] text-zinc-300">Python</span><span class="tag rounded-md px-2.5 py-1 text-[11px] text-zinc-300">CNN</span><span class="tag rounded-md px-2.5 py-1 text-[11px] text-zinc-300">MNIST</span>
+              </div>
+              <a href="https://github.com/sanskruti-joshi/Handwritten-Digit-Recognition-using-CNN" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex text-sm font-medium text-violet-300 transition hover:text-violet-200">Explore repository <span class="ml-2">↗</span></a>
+            </div>
+          </article>
+
+          <!-- Additional project -->
+          <article class="card overflow-hidden rounded-2xl md:col-span-2">
+            <div class="grid md:grid-cols-[.8fr_1.2fr]">
+              <div class="project-image min-h-48 overflow-hidden border-b border-zinc-800 md:border-b-0 md:border-r">
+                <div class="flex min-h-48 h-full items-center justify-center bg-[radial-gradient(circle_at_50%_50%,rgba(167,139,250,.10),transparent_60%),linear-gradient(135deg,#14141b,#101116)]">
+                  <div class="w-4/5 max-w-sm">
+                    <div class="flex items-center justify-between border-b border-zinc-700/70 pb-3">
+                      <span class="eyebrow text-[9px] text-zinc-500">SENSOR / DETECTION</span>
+                      <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+                    </div>
+                    <div class="mt-5 flex items-center justify-center gap-3">
+                      <div class="grid h-12 w-12 place-items-center rounded-xl border border-violet-300/30 bg-violet-300/[0.07] text-lg text-violet-200">⌁</div>
+                      <div class="h-px w-10 bg-zinc-600"></div>
+                      <div class="grid h-12 w-12 place-items-center rounded-xl border border-cyan-200/30 bg-cyan-200/[0.06] text-lg text-cyan-100">◉</div>
+                      <div class="h-px w-10 bg-zinc-600"></div>
+                      <div class="grid h-12 w-12 place-items-center rounded-xl border border-zinc-700 bg-zinc-900/80 text-lg text-zinc-300">↗</div>
+                    </div>
+                    <div class="mt-5 flex gap-1.5">
+                      <span class="h-1 flex-1 rounded bg-violet-300/60"></span><span class="h-1 flex-1 rounded bg-violet-300/40"></span><span class="h-1 flex-1 rounded bg-cyan-200/50"></span><span class="h-1 flex-1 rounded bg-zinc-700"></span><span class="h-1 flex-1 rounded bg-zinc-700"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6 sm:p-7">
+                <p class="eyebrow text-[10px] uppercase text-cyan-200">Embedded systems · Applied technology</p>
+                <h3 class="mt-3 text-lg font-semibold text-white">Automatic Pothole Detector</h3>
+                <p class="mt-3 text-sm leading-6 text-zinc-400">An academic project exploring an Arduino-based approach to pothole detection, applying embedded hardware to a practical road-safety problem.</p>
+                <div class="mt-5 flex flex-wrap gap-2">
+                  <span class="tag rounded-md px-2.5 py-1 text-[11px] text-zinc-300">Arduino</span><span class="tag rounded-md px-2.5 py-1 text-[11px] text-zinc-300">IoT</span><span class="tag rounded-md px-2.5 py-1 text-[11px] text-zinc-300">Embedded systems</span>
+                </div>
+                <a href="https://github.com/sanskruti-joshi/automatic-pothole-detector" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex text-sm font-medium text-violet-300 transition hover:text-violet-200">Explore repository <span class="ml-2">↗</span></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="section-rule py-14">
+        <div class="mb-8">
+          <p class="eyebrow text-[10px] uppercase text-violet-300">04 / Toolkit</p>
+          <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white">Skills &amp; technologies</h2>
+          <p class="mt-2 text-sm text-zinc-500">Tools and technologies I've worked with across projects and professional experience.</p>
+        </div>
+
+        <div class="grid gap-4 md:grid-cols-2">
+          <div class="card rounded-2xl p-6">
+            <div class="mb-5 flex items-center gap-3"><span class="grid h-9 w-9 place-items-center rounded-xl bg-violet-400/10 font-mono text-sm text-violet-200">{ }</span><h3 class="font-semibold text-white">Programming &amp; Query Languages</h3></div>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag rounded-lg px-3 py-2 text-xs text-zinc-300">Python</span><span class="tag rounded-lg px-3 py-2 text-xs text-zinc-300">SQL</span><span class="tag rounded-lg px-3 py-2 text-xs text-zinc-300">JavaScript</span><span class="tag rounded-lg px-3 py-2 text-xs text-zinc-300">TypeScript</span><span class="tag rounded-lg px-3 py-2 text-xs text-zinc-300">HTML</span><span class="tag rounded-lg px-3 py-2 text-xs text-zinc-300">CSS</span>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-6">
+            <div class="mb-5 flex items-center gap-3"><span class="grid h-9 w-9 place-items-center rounded-xl bg-cyan-300/10 font-mono text-sm text-cyan-200">ML</span><h3 class="font-semibold text-white">Machine Learning &amp; Data</h3></div>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag rounded-lg px-3 py-2 text-xs text-zinc-300">Scikit-learn</span><span class="tag rounded-lg px-3 py-2 text-xs text-zinc-300">XGBoost</span><span class="tag rounded-lg px-3 py-2 text-xs text-zinc-300">Pandas</span><span class="tag rounded-lg px-3 py-2 text-xs text-zinc-300">NumPy</span><span class="tag rounded-lg px-3 py-2 text-xs text-zinc-300">SHAP</span><span class="tag rounded-lg px-3 py-2 text-xs text-zinc-300">Statistics</span><span class="tag rounded-lg px-3 py-2 text-xs text-zinc-300">CNN</span><span class="tag rounded-lg px-3 py-2 text-xs text-zinc-300">NLP</span>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-6">
+            <div class="mb-5 flex items-center gap-3"><span class="grid h-9 w-9 place-items-center rounded-xl bg-violet-400/10 font-mono text-sm text-violet-200">⌘</span><h3 class="font-semibold text-white">Frameworks &amp; Development</h3></div>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag rounded-lg px-3 py-2 text-xs text-zinc-300">React</span><span class="tag rounded-lg px-3 py-2 text-xs text-zinc-300">Django</span><span class="tag rounded-lg px-3 py-2 text-xs text-zinc-300">Vite</span><span class="tag rounded-lg px-3 py-2 text-xs text-zinc-300">MongoDB</span>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-6">
+            <div class="mb-5 flex items-center gap-3"><span class="grid h-9 w-9 place-items-center rounded-xl bg-cyan-300/10 font-mono text-sm text-cyan-200">↗</span><h3 class="font-semibold text-white">Tools &amp; Analytics</h3></div>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag rounded-lg px-3 py-2 text-xs text-zinc-300">Git</span><span class="tag rounded-lg px-3 py-2 text-xs text-zinc-300">GitHub</span><span class="tag rounded-lg px-3 py-2 text-xs text-zinc-300">Power BI</span><span class="tag rounded-lg px-3 py-2 text-xs text-zinc-300">Microsoft Excel</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education & achievements -->
+      <section id="education" class="section-rule grid gap-8 py-14 md:grid-cols-2">
+        <div>
+          <p class="eyebrow text-[10px] uppercase text-violet-300">05 / Education</p>
+          <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white">Academic foundation</h2>
+          <div class="mt-7 space-y-5">
+            <div class="border-l border-violet-400/50 pl-5">
+              <p class="text-xs text-violet-300">2025 – 2026</p>
+              <h3 class="mt-1 font-semibold text-white">MSc Data Science</h3>
+              <p class="mt-1 text-sm text-zinc-400">Savitribai Phule Pune University</p>
+              <p class="mt-1 text-sm text-zinc-500">CGPA: 9.02 / 10 · A+ Grade</p>
+            </div>
+            <div class="border-l border-zinc-700 pl-5">
+              <p class="text-xs text-zinc-500">2024 – 2025</p>
+              <h3 class="mt-1 font-semibold text-white">Advanced Course in Data Science &amp; AI</h3>
+              <p class="mt-1 text-sm text-zinc-400">Savitribai Phule Pune University · 44 credits</p>
+            </div>
+            <div class="border-l border-zinc-700 pl-5">
+              <p class="text-xs text-zinc-500">2021 – 2024</p>
+              <h3 class="mt-1 font-semibold text-white">BSc Computer Science</h3>
+              <p class="mt-1 text-sm text-zinc-400">Modern College Ganeshkhind (SPPU)</p>
+              <p class="mt-1 text-sm text-zinc-500">CGPA: 9.6 / 10 · O Grade</p>
+            </div>
+            <div class="border-l border-zinc-700 pl-5">
+              <p class="text-xs text-zinc-500">2020 – 2021</p>
+              <h3 class="mt-1 font-semibold text-white">Higher Secondary Certificate (HSC / Class XII)</h3>
+              <p class="mt-1 text-sm text-zinc-400">Sinhgad Institutes</p>
+              <p class="mt-1 text-sm text-zinc-500">97%</p>
+            </div>
+            <div class="border-l border-zinc-700 pl-5">
+              <p class="text-xs text-zinc-500">2018 – 2019</p>
+              <h3 class="mt-1 font-semibold text-white">Secondary School Certificate (SSC / Class XII)</h3>
+              <p class="mt-1 text-sm text-zinc-400">Sinhgad Institutes</p>
+              <p class="mt-1 text-sm text-zinc-500">95%</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="eyebrow text-[10px] uppercase text-cyan-200">06 / Recognition</p>
+          <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white">Achievements</h2>
+          <div class="mt-7 space-y-3">
+            <div class="card rounded-xl p-5"><p class="text-sm font-medium text-white">First Rank · BSc Computer Science</p><p class="mt-1 text-xs leading-5 text-zinc-500">Academic distinction and Endowment Prize, Modern College.</p></div>
+            <div class="card rounded-xl p-5"><p class="text-sm font-medium text-white">First Rank · Mathematics</p><p class="mt-1 text-xs leading-5 text-zinc-500">Academic achievement.</p></div>
+            <div class="card rounded-xl p-5"><p class="text-sm font-medium text-white">Avishkar · First Prize at College Level</p><p class="mt-1 text-xs leading-5 text-zinc-500">Research and innovation competition.</p></div>
+            <div class="card rounded-xl p-5"><p class="text-sm font-medium text-white">NPTEL · Programming, Data Structures and Algorithms using Python</p><p class="mt-1 text-xs leading-5 text-zinc-500">Top 1% : Silver-Elite Distinction</p></div>
+            <div class="card rounded-xl p-5"><p class="text-sm font-medium text-white">Smart India Hackathon</p><p class="mt-1 text-xs leading-5 text-zinc-500">Participant.</p></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="flex flex-col items-center justify-between gap-4 border-t border-zinc-800/80 py-7 text-xs text-zinc-500 sm:flex-row">
+      <p>© <span id="year"></span> Sanskruti Joshi. Built with care.</p>
+      <div class="flex items-center gap-5">
+        <a class="transition hover:text-white" href="https://github.com/sanskruti-joshi" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a class="transition hover:text-white" href="https://www.linkedin.com/in/sanskrutirjoshi" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a class="transition hover:text-white" href="#home">Back to top ↑</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Mobile navigation
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuButton.addEventListener('click', () => {
+      const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isExpanded));
+      mobileMenu.classList.toggle('hidden');
+      menuButton.setAttribute('aria-label', isExpanded ? 'Open navigation menu' : 'Close navigation menu');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Open navigation menu');
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
