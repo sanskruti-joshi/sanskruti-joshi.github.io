@@ -1,31 +1,35 @@
 # Portfolio
 
-🌐 Live Website: https://sanskruti-joshi.github.io/  
+🌐 **Live Website:** [https://sanskruti-joshi.github.io/](https://sanskruti-joshi.github.io/)
 
-This repository contains the source code for my personal portfolio website.
-
-The site showcases my projects, academic achievements, technical experience, and work in Data Science and Frontend Development.
+A personal portfolio website showcasing academic background, professional experience, projects, research work, technical skills, and achievements in Data Science and Software Development.
 
 ---
 
 ## Tech Stack
 
-- React
-- TypeScript
+- HTML5
 - Tailwind CSS
-- Framer Motion
-- Vite
-- Deployed on Vercel
+- JavaScript
+- CSS & SVG
 
 ---
 
-## Purpose
+## Features
 
-Designed to present my work in Machine Learning, Web Development, and academic research in a structured and visually refined format.
+- Responsive single-page layout
+- Modern dark-themed Bento Grid design
+- Interactive navigation
+- Project and research showcase
+- Professional experience and academic background
+- Technical skills and achievements
+- Custom CSS/SVG visualizations
+- Downloadable résumé
 
 ---
 
-## Contact
+## Deployment
 
-LinkedIn: www.linkedin.com/in/sanskrutirjoshi <br>
-Email: sanskrutijoshi131@gmail.com
+Hosted using **GitHub Pages**.
+
+---
